@@ -1,0 +1,3 @@
+[submodule "cfgrepo"]
+	path = cfgrepo
+	url = git@github.com:joka/leocornus.buildout.cfgrepo.git
