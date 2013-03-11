@@ -51,7 +51,11 @@ Change Magento configuration
 
 Don't use the Webinterface to configure magento or change files in var/www. 
 The files in var/www or the mysql database can be overriden by buildout.
-Instead use an extension module to modifiy magento.
+Instead edit magento-conf buildout part and rerun buildout
+(cfgrepo/config/magento.cfg gives you an example how to modify locale.xml).
+
+You can use wiz to list available config options:
+$  bin/whiz config-get global/pdf
 
 Add an extension module to magento
 ----------------------------------
