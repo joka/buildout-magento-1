@@ -1,6 +1,0 @@
-[submodule "buildout/cfgrepo"]
-	path = buildout/cfgrepo
-	url = git://github.com/leocornus/leocornus.buildout.cfgrepo.git
-[submodule "leocornus.buildout.cfgrepo.git cfgrepo"]
-	path = leocornus.buildout.cfgrepo.git cfgrepo
-	url = git@github.com:joka/leocornus.buildout.cfgrepo.git cfgrepo
