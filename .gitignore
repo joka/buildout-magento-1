@@ -35,4 +35,11 @@ etc/mysql.cnf
 etc/nginx.conf
 etc/php-fpm.conf
 etc/php.ini
-etc/supervisor.con
+etc/supervisor.conf
+docs/Makefile
+docs/doctest/
+docs/doctrees/
+docs/html/
+docs/latex
+docs/make.bat
+        
