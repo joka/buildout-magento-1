@@ -7,39 +7,63 @@ Please read buildout.cfg to see all system configurations.
 Installation
 -------------
 
-Install Dependencies (tested with Debian 6 and Ubuntu 12.10):
+1.a Install Dependencies (tested with Debian 6 and Ubuntu 12.10):
 
     $ sudo apt-get install libpng-dev libjpeg-dev gcc make build-essential bin86 unzip libpcre3-dev zlib1g-dev git libssl-dev libghc6-bzlib-dev
     $ sudo apt-get install libcurl4-openssl-dev libxml2-dev  libjpeg-dev libpng12-dev  libgd2-xpm-dev libmcrypt-dev libfreetype6-dev gettext  
     $ sudo apt-get install python python-virtualenv
     $ sudo apt-get install imagemagick libpcre3-dev autoconf libltdl-dev cmake
 
-Install Dependencies Macos:
+1.b Install Dependencies Mac OSX:
 
     use http://mxcl.github.com/homebrew/ or similar to install dependencies
 
-Create an isolated python environment:
+2. Create an isolated python environment:
     $virtualenv .
 
-Run buildout to build/configure all server:
+3. Run buildout to build/configure all server:
     $ bin/python bootstrap.py
     $ bin/buildout 
     
-Setup Mysql and start supervisor (server to controll process states):
+   Setup Mysql and start supervisor (server to controll process states):
     $ bin/buildout install init-mysql-db
 
-Check that every server runs fine:
+   Check that every server runs fine:
     $ bin/supervisorctl status
 
-Run the magento installer
+4. Add your domain (magento base url) to /etc/hosts:
+
+    $ echo "127.0.0.1 develop.sativa.jokasis.de hobby.develop.sativa.jokasis.de resell.develop.sativa.jokasis.de profi.develop.sativa.jokasis" | sudo tee -a  /etc/hosts"
+
+5a Import databse with categories, websites, stores and views !!overrides database!!: 
+    $ bin/mysql < etc/magento_database_basic_views_14_03_2013.sql
+
+5b Or run the magento installer 
+
     $ bin/buildout install magento-install
 
-Install your magento config
-    $ bin/buildout install magento-conf
- 
-Enjoy magento:
+   Log into the mangento admin panel:
 
     http://127.0.0.1:9010/admin
+
+   Add root categories manually: 
+
+    go to cataglog-> manage categories
+    add and activate ch_hobby, ch_profi, ch_resell, fr_hobby, fr_resell, fr_profi, de_hobby, de_resell
+ 
+   Add websites, stores, views manually: 
+   
+    got to system-> manage stores
+    add websites chwebsite, frwebsite, dewebsite
+
+    add stores and select the right website / root category:  ch_hobby, ch_profi, fr_hobby, fr_resell, fr_profi, de_hobby, de_resell
+
+    add storeviews for every language: de_ch_hobby, fr_ch_hobby..  fr_fr_hobby, ...
+
+
+6. Install the magento config
+    $ bin/buildout install magento-conf
+
 
 
 Update Server configurations
