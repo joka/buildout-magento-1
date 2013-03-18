@@ -34,6 +34,9 @@ Check that every server runs fine:
 Run the magento installer
     $ bin/buildout install magento-install
 
+Install your magento config
+    $ bin/buildout install magento-conf
+ 
 Enjoy magento:
 
     http://127.0.0.1:9010/admin
