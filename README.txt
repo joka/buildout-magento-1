@@ -36,6 +36,7 @@ Installation
     $ echo "127.0.0.1 develop.sativa.jokasis.de hobby.develop.sativa.jokasis.de resell.develop.sativa.jokasis.de profi.develop.sativa.jokasis" | sudo tee -a  /etc/hosts"
 
 5a Import databse with categories, websites, stores and views !!overrides database!!: 
+
     $ bin/mysql < etc/magento_database_basic_views_14_03_2013.sql
 
 5b Or run the magento installer 
@@ -61,8 +62,9 @@ Installation
     add storeviews for every language: de_ch_hobby, fr_ch_hobby..  fr_fr_hobby, ...
 
 
-6. Install the magento config
-    $ bin/buildout install magento-conf
+6. Generate the magento config (lokale.xml)
+
+    $ bin/magento-update-conf 
 
 
 
