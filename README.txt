@@ -14,6 +14,10 @@ Install Dependencies (tested with Debian 6 and Ubuntu 12.10):
     $ sudo apt-get install python python-virtualenv
     $ sudo apt-get install imagemagick libpcre3-dev autoconf libltdl-dev cmake
 
+Install Dependencies Macos:
+
+    use http://mxcl.github.com/homebrew/ or similar to install dependencies
+
 Create an isolated python environment:
     $virtualenv .
 
