@@ -13,10 +13,10 @@ Contents:
 
 
 .. services::
-   :modules: organicseeds_webshop_api
-   :service: quote
+   :modules: organicseeds_webshop_api.categories
+   :service: categories
 
-
+dddddd
 
 Indices and tables
 ==================
