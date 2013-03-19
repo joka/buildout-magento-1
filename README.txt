@@ -1,8 +1,30 @@
-Buildout zur Installation von Magento und der Bingenheim/Savia Selectline Schnittstelle 
-========================================================================================
 
-This deployment uses buildout to build and configure the servers to deploy Magento.
-Please read buildout.cfg to see all system configurations.
+Deployment to install Magento and the webshop api webservice for Bingenheim/Satvia selecline 
+============================================================================================
+
+# This deployment uses buildout to build and configure the servers to run Magento and the 
+# webshop api webservice:
+#
+#   - 'mysql', database to run magento
+#   - 'php-fpm', php factcgi process to run magento
+#   - 'ngix', main web server
+#   - 'webhops_api', python webservice to access magento
+#   - 'supervisor', daemon to controll process states
+# 
+# Log rotation is configured for all of these.The log rotation configuration file is in 
+# parts/logrotate.conf and this needs to be symlinked into the main logrotate configuration.
+# 
+# The buildout is splitted in different files:
+#
+#   - configuration.cfg: configure hostnames, ports, config and log files
+#   - magento_stores_conf.cfg: magento stores configuration (used to generate locale.xml)
+#   - base.cfg: build dependencies/server
+#
+#   - develop.cfg : custumization for the developoment environment on the sever
+#   - staging.cfg : custumization for the staging environment on the sever
+#   - production.cfg : custumization for the prodcution environment on the sever
+#
+#   - buildout.cfg: default buildout file, extend here configuration.cfg, develop.cfg, staging.cfg or production.cfg
 
 Installation
 -------------
@@ -62,7 +84,7 @@ Installation
     add storeviews for every language: de_ch_hobby, fr_ch_hobby..  fr_fr_hobby, ...
 
 
-6. Generate the magento config (lokale.xml)
+6. Generate the magento config (locale.xml)
 
     $ bin/magento-update-conf 
 
