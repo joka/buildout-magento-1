@@ -147,17 +147,17 @@ http://ndpsoftware.com/git-cheatsheet.html#loc=index
 
 Commit every atomic modifcation.
 
+update:
+    $ git pull --rebase     
 commit:
     $ git add changed file
     $ git commit -m"my change"
-
 update:
     $ git pull --rebase     
-    
 push to upstream:
     $ git push
 
-For complex modifcations use features branches 
+For complex modifcations use features branches and merging 
 (http://nakedstartup.com/2010/04/simple-daily-git-workflow):
  
 
