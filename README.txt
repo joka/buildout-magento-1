@@ -89,8 +89,7 @@ Installation
     $ bin/magento-update-conf 
 
 
-
-Update Server configurations
+Update server configuration
 -----------------------------
 
 Edit template files
@@ -101,19 +100,68 @@ Rerun buildout:
 
     $ bin/buildout
 
-Change Magento configuration
+Update Magento configuration
 ----------------------------
 
-Don't use the Webinterface to configure magento or change files in var/www. 
-The files in var/www or the mysql database can be overriden by buildout.
-Instead edit magento-conf buildout part and rerun buildout
-(cfgrepo/config/magento.cfg gives you an example how to modify locale.xml).
+Don't use the admin panel to configure magento or change files in var/www. 
+These can be overriden by buildout.
 
-You can use wiz to list available config options:
-$  bin/whiz config-get global/pdf
+Instead modify configuration.cfg or magento-stores-conf.cfg and rergenerate locale.xml:
+
+    $ bin/magento-update-conf
+
+You can use wiz to list available config options
+(https://github.com/classyllama/Wiz):
+
+    $ bin/whiz config-get global/pdf
 
 Add an extension module to magento
 ----------------------------------
+
+For common extensions edit the modman part in configuration.cfg
+(https://github.com/colinmollenhour/modman/wiki/Tutorial).
+Rerun buildout:
+
+    $ bin/buildout
+
+PHP coding style guide
+--------------------------------
+
+- Code generation with MTool if needed
+- Use observers and theme interface whenever possible instead of core overrides.
+- https://wiki.magento.com/display/MAGE2DOC/PHP+Coding+Standards+and+Practices#PHPCodingStandardsandPractices-3.CodingStyle
+- PHPUnit oder functional test browser tests, try 99% code coverage
+
+Python coding style guide
+--------------------------------
+
+- pep8, pyflakes, pepp-257
+- http://docs.pylonsproject.org/en/latest/community/codestyle.html 
+- 99% test coverage
+
+Use the GIT version control system
+---------------------------------
+
+http://git-scm.com/book
+http://ndpsoftware.com/git-cheatsheet.html#loc=index
+
+Commit every atomic modifcation.
+
+commit:
+    $ git add changed file
+    $ git commit -m"my change"
+
+update:
+    $ git pull --rebase     
+    
+push to upstream:
+    $ git push
+
+For complex modifcations use features branches 
+(http://nakedstartup.com/2010/04/simple-daily-git-workflow):
+ 
+
+
 
 
 
