@@ -29,16 +29,26 @@ Deployment to install Magento and the webshop api webservice for Bingenheim/Satv
 Installation
 -------------
 
-1.a Install Dependencies (tested with Debian 6 and Ubuntu 12.10):
+
+0.a Install Dependencies (tested with Debian 6 and Ubuntu 12.10):
 
     $ sudo apt-get install libpng-dev libjpeg-dev gcc make build-essential bin86 unzip libpcre3-dev zlib1g-dev git libssl-dev libghc6-bzlib-dev
     $ sudo apt-get install libcurl4-openssl-dev libxml2-dev  libjpeg-dev libpng12-dev  libgd2-xpm-dev libmcrypt-dev libfreetype6-dev gettext  
     $ sudo apt-get install python python-virtualenv
     $ sudo apt-get install imagemagick libpcre3-dev autoconf libltdl-dev cmake
+ 
 
-1.b Install Dependencies Mac OSX:
+0.b Install Dependencies Mac OSX:
 
     use http://mxcl.github.com/homebrew/ or similar to install dependencies
+
+1  Checkout this buildout repository:
+    
+    $ mkdir magnento 
+    $ cd magento
+    $ git clone https://organic_seeds@bitbucket.org/organic_seeds/magento_buildout.git . 
+    $ git submodule init
+    $ git submodule update
 
 2. Create an isolated python environment:
     $virtualenv .
