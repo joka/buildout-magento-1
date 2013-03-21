@@ -20,6 +20,7 @@ Deployment to install Magento and the webshop api webservice for Bingenheim/Satv
 #   - magento_stores_conf.cfg: magento stores configuration (used to generate locale.xml)
 #   - base.cfg: build dependencies/server
 #
+#   - develop_local.cfg : custumization for the local developoment environment
 #   - develop.cfg : custumization for the developoment environment on the sever
 #   - staging.cfg : custumization for the staging environment on the sever
 #   - production.cfg : custumization for the prodcution environment on the sever
