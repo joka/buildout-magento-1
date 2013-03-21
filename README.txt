@@ -29,16 +29,18 @@ Deployment to install Magento and the webshop api webservice for Bingenheim/Satv
 Installation
 -------------
 
+A.  To checkout the source code / buildout you need a bitbucket.com acckount with uploaded ssh-key.
+    They ssh-key should be added to you ssh-agent: 
+        $ ssh-add
 
-0.a Install Dependencies (tested with Debian 6 and Ubuntu 12.10):
+0.1 Install Dependencies (tested with Debian 6 and Ubuntu 12.10):
 
     $ sudo apt-get install libpng-dev libjpeg-dev gcc make build-essential bin86 unzip libpcre3-dev zlib1g-dev git libssl-dev libghc6-bzlib-dev
     $ sudo apt-get install libcurl4-openssl-dev libxml2-dev  libjpeg-dev libpng12-dev  libgd2-xpm-dev libmcrypt-dev libfreetype6-dev gettext  
     $ sudo apt-get install python python-virtualenv
-    $ sudo apt-get install imagemagick libpcre3-dev autoconf libltdl-dev cmake
- 
+    $ sudo apt-get install imagemagick libpcre3-dev autoconf libltdl-dev cmake openssh-client
 
-0.b Install Dependencies Mac OSX:
+0.2 Install Dependencies Mac OSX:
 
     use http://mxcl.github.com/homebrew/ or similar to install dependencies
 
@@ -54,6 +56,7 @@ Installation
     $virtualenv .
 
 3. Run buildout to build/configure all server:
+ 
     $ bin/python bootstrap.py
     $ bin/buildout 
     
