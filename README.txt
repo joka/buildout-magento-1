@@ -140,7 +140,7 @@ Rerun buildout:
 PHP coding style guide
 --------------------------------
 
-- Code generation with MTool if needed
+- Code generation with MTool https://github.com/dankocherga/MTool/wiki/Manual
 - Use observers and theme interface whenever possible instead of core overrides.
 - https://wiki.magento.com/display/MAGE2DOC/PHP+Coding+Standards+and+Practices#PHPCodingStandardsandPractices-3.CodingStyle
 - PHPUnit oder functional test browser tests, try 99% code coverage
