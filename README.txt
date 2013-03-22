@@ -131,11 +131,11 @@ extensions upgrade profile:
 
     $ cd src/organicseeds_profile
     get the current version number
-    $ cat app/code/local/OrganicSeeds/Profile/etc/config.xml
+    $ cat app/code/local/Organicseeds/Profile/etc/config.xml
     generate upgrade profile to new version
-    $ zf upgrade mage-module OrganicSeeds/Profile to  0.0.2
+    $ zf upgrade mage-module organicseeds/profile to  0.0.2
     add upgrade code
-    $ vim app/code/local/OrganicSeeds/Profile/sql/organicseeds_profile_setup/mysql4-upgrade-0.0.1-0.0.2.php
+    $ vim app/code/local/Organicseeds/Profile/sql/organicseeds_profile_setup/mysql4-upgrade-0.0.1-0.0.2.php
 
 You can use wiz to list available config options
 (https://github.com/classyllama/Wiz):
