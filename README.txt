@@ -120,9 +120,22 @@ Update Magento configuration
 Don't use the admin panel to configure magento or change files in var/www. 
 These can be overriden by buildout.
 
-Instead modify configuration.cfg or magento-stores-conf.cfg and rergenerate locale.xml:
+Magento scopes are described here: http://www.magentocommerce.com/knowledge-base/entry/understanding-store-scopes.
+To change store or website scope configuration modify magento-stores-conf.cfg 
+and rergenerate locale.xml:
 
     $ bin/magento-update-conf
+
+To change global configuration or to add default data with SQL add an 
+extensions upgrade profile:
+
+    $ cd src/organicseeds_profile
+    get the current version number
+    $ cat app/code/local/OrganicSeeds/Profile/etc/config.xml
+    generate upgrade profile to new version
+    $ zf upgrade mage-module OrganicSeeds/Profile to  0.0.2
+    add upgrade code
+    $ vim app/code/local/OrganicSeeds/Profile/sql/organicseeds_profile_setup/mysql4-upgrade-0.0.1-0.0.2.php
 
 You can use wiz to list available config options
 (https://github.com/classyllama/Wiz):
