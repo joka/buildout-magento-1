@@ -8,6 +8,24 @@ Upload Items and Categories to the Webshop
 .. automodule:: organicseeds_webshop_api.services
    :noindex:
 
+POST /item_groups
+------------------
+
+.. autofunction:: organicseeds_webshop_api.services.item_groups_post
+
+Schema definitions
+____________________
+
+.. autoclass:: organicseeds_webshop_api.schemata.ItemGroup
+
+
+Example json data (yaml syntax):
+__________________________________
+
+.. literalinclude:: item_groups_post.yaml
+
+
+
 POST /items
 ----------
 
@@ -17,13 +35,10 @@ Schema definitions
 ____________________
 
 .. autoclass:: organicseeds_webshop_api.schemata.UnitOfMeasure
-   :noindex:
 
 .. autoclass:: organicseeds_webshop_api.schemata.VPEType
-   :noindex:
 
 .. autoclass:: organicseeds_webshop_api.schemata.Item
-   :noindex:
 
 
 Example json data (yaml syntax):
