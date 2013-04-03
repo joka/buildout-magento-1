@@ -26,7 +26,7 @@ __________________________________
 
 
 DELETE /categories
-------------------
+--------------------
 
 .. autofunction:: organicseeds_webshop_api.services.categories_delete
 
@@ -43,7 +43,7 @@ __________________________________
 
 
 DELETE /item_groups
-------------------
+--------------------
 
 .. autofunction:: organicseeds_webshop_api.services.item_groups_delete
 
@@ -60,7 +60,7 @@ __________________________________
 
 
 DELETE /unit_of_measures
-----------------------
+--------------------------
 
 .. autofunction:: organicseeds_webshop_api.services.unit_of_measures_delete
 
@@ -106,7 +106,7 @@ __________________________________
 
 
 DELETE /items
----------------
+-----------------
 
 .. autofunction:: organicseeds_webshop_api.services.items_delete
 
