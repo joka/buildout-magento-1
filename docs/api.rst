@@ -59,6 +59,12 @@ DELETE /unit_of_measures
 .. autofunction:: organicseeds_webshop_api.services.unit_of_measures_delete
 
 
+PUT /unit_of_measures
+------------------------
+
+TODO
+
+
 POST /vpe_types
 ----------------------
 
@@ -70,10 +76,16 @@ __________________________________
 .. literalinclude:: vpe_types_post.yaml
 
 
-Delete /vpe_types
+DELETE /vpe_types
 ----------------------
 
 .. autofunction:: organicseeds_webshop_api.services.vpe_types_delete
+
+
+PUT /vpe_types
+---------------
+
+TODO
 
 
 POST /items
@@ -91,6 +103,12 @@ DELETE /items
 ---------------
 
 .. autofunction:: organicseeds_webshop_api.services.items_delete
+
+
+PUT /items
+------------
+
+.. autofunction:: organicseeds_webshop_api.services.items_put
 
 
 Basic fields
@@ -246,6 +264,10 @@ ItemGroup
 Item
 ----
 .. autoclass:: organicseeds_webshop_api.schemata.Item
+
+ItemUpdate
+-------------
+.. autoclass:: organicseeds_webshop_api.schemata.ItemUpdate
 
 
 
