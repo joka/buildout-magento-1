@@ -6,45 +6,250 @@ Upload Items and Categories to the Webshop
 ==========================================
 
 .. automodule:: organicseeds_webshop_api.services
-   :noindex:
+
+
+POST /categories
+------------------
+
+.. autofunction:: organicseeds_webshop_api.services.categories_post
+
+Example json data (yaml):
+__________________________________
+
+.. literalinclude:: categories_post.yaml
+
+
+DELETE /categories
+------------------
+
+.. autofunction:: organicseeds_webshop_api.services.categories_delete
+
 
 POST /item_groups
 ------------------
 
 .. autofunction:: organicseeds_webshop_api.services.item_groups_post
 
-Schema definitions
-____________________
-
-.. autoclass:: organicseeds_webshop_api.schemata.ItemGroup
-
-
-Example json data (yaml syntax):
+Example json data (yaml):
 __________________________________
 
 .. literalinclude:: item_groups_post.yaml
 
 
+DELETE /item_groups
+------------------
+
+.. autofunction:: organicseeds_webshop_api.services.item_groups_delete
+
+
+POST /unit_of_measures
+----------------------
+
+.. autofunction:: organicseeds_webshop_api.services.unit_of_measures_post
+
+Example json data (yaml):
+__________________________________
+
+.. literalinclude:: unit_of_measures_post.yaml
+
+
+DELETE /unit_of_measures
+----------------------
+
+.. autofunction:: organicseeds_webshop_api.services.unit_of_measures_delete
+
+
+POST /vpe_types
+----------------------
+
+.. autofunction:: organicseeds_webshop_api.services.vpe_types_post
+
+Example json data (yaml):
+__________________________________
+
+.. literalinclude:: vpe_types_post.yaml
+
+
+Delete /vpe_types
+----------------------
+
+.. autofunction:: organicseeds_webshop_api.services.vpe_types_delete
+
 
 POST /items
-----------
+------------
 
 .. autofunction:: organicseeds_webshop_api.services.items_post
 
-Schema definitions
-____________________
-
-.. autoclass:: organicseeds_webshop_api.schemata.UnitOfMeasure
-
-.. autoclass:: organicseeds_webshop_api.schemata.VPEType
-
-.. autoclass:: organicseeds_webshop_api.schemata.Item
-
-
-Example json data (yaml syntax):
+Example json data (yaml):
 __________________________________
 
 .. literalinclude:: items_post.yaml
+
+
+DELETE /items
+---------------
+
+.. autofunction:: organicseeds_webshop_api.services.items_delete
+
+
+Basic fields
+==================
+
+Identifier
+----------
+.. autoclass:: organicseeds_webshop_api.schemata.Identifier
+
+String
+----------------
+.. autoclass:: organicseeds_webshop_api.schemata.String
+
+StringTranslation
+---------------------
+.. autoclass:: organicseeds_webshop_api.schemata.StringTranslation
+
+Decimal
+----------------
+.. autoclass:: organicseeds_webshop_api.schemata.Decimal
+
+Float
+----------------
+.. autoclass:: organicseeds_webshop_api.schemata.Float
+
+URL
+----------------
+.. autoclass:: organicseeds_webshop_api.schemata.URL
+
+RelativeFilePathUnix
+---------------------
+.. autoclass:: organicseeds_webshop_api.schemata.RelativeFilePathUnix
+
+Integer
+----------------
+.. autoclass:: organicseeds_webshop_api.schemata.Integer
+
+IntegerGtEqNull
+---------------------
+.. autoclass:: organicseeds_webshop_api.schemata.IntegerGtEqNull
+
+IntegerGtNull
+---------------------
+.. autoclass:: organicseeds_webshop_api.schemata.IntegerGtNull
+
+Identifier
+----------------
+.. autoclass:: organicseeds_webshop_api.schemata.Identifier
+
+ShopID
+----------------
+.. autoclass:: organicseeds_webshop_api.schemata.ShopID
+
+WebsiteID
+----------------
+.. autoclass:: organicseeds_webshop_api.schemata.WebsiteID
+
+CustomerGroup
+---------------------
+.. autoclass:: organicseeds_webshop_api.schemata.CustomerGroup
+
+TaxClass
+---------------------
+.. autoclass:: organicseeds_webshop_api.schemata.TaxClass
+
+
+Complex fields with inheritance
+=====================================
+
+Some attribute groups are inherit from category to item_group.
+They have a group field for semantical grouping (attributes for
+profi customers, download documents, ..)
+The order field sort the attributes of one group (ascending).
+
+TextAttribute
+-------------------
+
+.. autoclass:: organicseeds_webshop_api.schemata.TextAttribute
+.. autoclass:: organicseeds_webshop_api.schemata.TextLink
+
+MeasureAttribute
+---------------------
+.. autoclass:: organicseeds_webshop_api.schemata.MeasureAttribute
+
+BoolAttribute
+-------------------
+.. autoclass:: organicseeds_webshop_api.schemata.BoolAttribute
+
+WeekmatrixAttribute
+------------------------
+.. autoclass:: organicseeds_webshop_api.schemata.WeekmatrixAttribute
+
+FileAttribute
+--------------
+.. autoclass:: organicseeds_webshop_api.schemata.FileAttribute
+
+LinkAttribute
+------------------
+.. autoclass:: organicseeds_webshop_api.schemata.LinkAttribute
+
+
+Complex fields without inheritance
+========================================
+
+Shop
+----------------
+.. autoclass:: organicseeds_webshop_api.schemata.Shop
+
+WebsitePrice
+----------------
+.. autoclass:: organicseeds_webshop_api.schemata.WebsitePrice
+
+TierPrice
+----------------
+.. autoclass:: organicseeds_webshop_api.schemata.TierPrice
+
+SynonymsTranslation
+---------------------
+.. autoclass:: organicseeds_webshop_api.schemata.SynonymsTranslation
+
+Quality
+----------------
+.. autoclass:: organicseeds_webshop_api.schemata.Quality
+
+TaxClass
+----------------
+.. autoclass:: organicseeds_webshop_api.schemata.TaxClass
+
+
+Schema enties
+================
+
+BasicNode (base schema)
+--------------------------
+.. autoclass:: organicseeds_webshop_api.schemata.BasicNode
+
+Category
+--------
+.. autoclass:: organicseeds_webshop_api.schemata.Category
+
+ItemGroup
+------------
+.. autoclass:: organicseeds_webshop_api.schemata.ItemGroup
+
+(VPEType)
+---------------
+.. autoclass:: organicseeds_webshop_api.schemata.VPEType
+
+(UnitOfMeasure)
+-----------------
+.. autoclass:: organicseeds_webshop_api.schemata.UnitOfMeasure
+
+Item
+----
+.. autoclass:: organicseeds_webshop_api.schemata.Item
+
+
+
+
 
 Return codes
 =============
