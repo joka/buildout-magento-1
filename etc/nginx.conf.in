@@ -25,9 +25,9 @@ http {
     autoindex off;
     keepalive_timeout  10;
     # fastcgi 
-    fastcgi_connect_timeout 600;
-    fastcgi_send_timeout 360;
-    fastcgi_read_timeout 360;
+    fastcgi_connect_timeout 900;
+    fastcgi_send_timeout 900;
+    fastcgi_read_timeout 900;
     fastcgi_buffer_size 128k;
     fastcgi_buffers 4 256k;
     fastcgi_busy_buffers_size 256k;
