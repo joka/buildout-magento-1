@@ -2,6 +2,12 @@
 API Documentation
 =================
 
+API URL
+========
+
+development: http://api.develop.sativa.jokasis.de
+
+
 Upload Items and Categories to the Webshop
 ==========================================
 
@@ -288,3 +294,6 @@ Return codes
   name is the eventual name of the value that caused problems
   description is a description of the problem encountered.
 
+- status code: 500
+
+  Internal Error, see log files for details.
