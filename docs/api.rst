@@ -19,8 +19,7 @@ POST /categories
 
 .. autofunction:: organicseeds_webshop_api.services.categories_post
 
-Example json data (yaml):
-__________________________________
+**Example json data (yaml):**
 
 .. literalinclude:: categories_post.yaml
 
@@ -36,8 +35,7 @@ POST /item_groups
 
 .. autofunction:: organicseeds_webshop_api.services.item_groups_post
 
-Example json data (yaml):
-__________________________________
+**Example json data (yaml):**
 
 .. literalinclude:: item_groups_post.yaml
 
@@ -53,8 +51,7 @@ POST /unit_of_measures
 
 .. autofunction:: organicseeds_webshop_api.services.unit_of_measures_post
 
-Example json data (yaml):
-__________________________________
+**Example json data (yaml):**
 
 .. literalinclude:: unit_of_measures_post.yaml
 
@@ -76,8 +73,7 @@ POST /vpe_types
 
 .. autofunction:: organicseeds_webshop_api.services.vpe_types_post
 
-Example json data (yaml):
-__________________________________
+**Example json data (yaml):**
 
 .. literalinclude:: vpe_types_post.yaml
 
@@ -99,8 +95,7 @@ POST /items
 
 .. autofunction:: organicseeds_webshop_api.services.items_post
 
-Example json data (yaml):
-__________________________________
+**Example json data (yaml):**
 
 .. literalinclude:: items_post.yaml
 
