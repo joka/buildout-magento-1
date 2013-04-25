@@ -71,23 +71,18 @@ A.  To checkout the source code / buildout you need a bitbucket.com acckount wit
 
     $ echo "127.0.0.1 develop.sativa.jokasis.de hobby.develop.sativa.jokasis.de resell.develop.sativa.jokasis.de profi.develop.sativa.jokasis" | sudo tee -a  /etc/hosts"
 
-5a Import databse with categories, websites, stores and views !!overrides database!!: 
+5. Proxy develop.sativa.jokasis.de to develop.sativa.jokasis.de:9010, magento needs to run without port numbers.
 
-    $ bin/mysql < etc/magento_database_basic_views_14_03_2013.sql
+6a Import databse with categories, websites, stores and views !!overrides database!!: 
 
-5b Or run the magento installer 
+    $ bin/mysql -D magento < etc/magento_database_basic_views_14_03_2013.sql
 
-    $ bin/buildout install magento-install
+6b Or manually setup the initial datar 
 
    Log into the mangento admin panel:
 
-    http://127.0.0.1:9010/admin
+    http://develop.sativa.jokasis.de/admin
 
-   Add root categories manually: 
-
-    go to cataglog-> manage categories
-    add and activate ch_hobby, ch_profi, ch_resell, fr_hobby, fr_resell, fr_profi, de_hobby, de_resell
- 
    Add websites, stores, views manually: 
    
     got to system-> manage stores
@@ -98,11 +93,6 @@ A.  To checkout the source code / buildout you need a bitbucket.com acckount wit
     add storeviews for every language: de_ch_hobby, fr_ch_hobby..  fr_fr_hobby, ...
 
 
-6. Generate the magento config (locale.xml)
-
-    $ bin/magento-update-conf 
-
-
 Update server configuration
 -----------------------------
 
@@ -110,9 +100,9 @@ Edit template files
 
     $ vim etc/php-ini.in
 
-Rerun buildout:
+Rerun buildout in offline mode:
 
-    $ bin/buildout
+    $ bin/buildout -o
 
 Update Magento configuration
 ----------------------------
