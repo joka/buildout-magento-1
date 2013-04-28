@@ -42,7 +42,8 @@ http {
     gzip_types text/plain text/css application/x-javascript text/xml application/xml application/xml+rss text/javascript;
     gzip_buffers 16 8k;
     gzip_disable .MSIE [1-6].(?!.*SV1).;
-
+    # client
+    client_max_body_size 10000M;
     # more setting for server.
     # client_header_timeout	10m;
     # client_body_timeout	10m;
