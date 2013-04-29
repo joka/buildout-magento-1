@@ -33,7 +33,7 @@ http {
     fastcgi_busy_buffers_size 256k;
     fastcgi_temp_file_write_size 256k;
     fastcgi_intercept_errors on;
-    fastcgi_keep_conn on;
+    #fastcgi_keep_conn on; # enable keepalive with fastcgi
     # gzip
     gzip on;
     gzip_comp_level 6;
