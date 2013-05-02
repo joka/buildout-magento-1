@@ -17,11 +17,14 @@ allow_call_time_pass_reference = Off
 safe_mode = Off
 safe_mode_gid = Off
 expose_php = On
+realpath_cache_size=32k
+realpath_cache_ttl=7200
+
 ;;;;;;;;
 ; memory.
-max_execution_time = 18000
-max_input_time = 600
-memory_limit = 2048M
+max_execution_time = -1
+max_input_time = -1
+memory_limit = 512M
 ;;;;;;;;
 ; error handling.
 error_reporting = E_ALL & ~E_DEPRECATED
@@ -105,6 +108,9 @@ mail.add_x_header = On
 [SQL]
 ; http://www.php.net/manual/en/ini.core.php#ini.sql.safe-mode
 sql.safe_mode = Off
+
+[pdo_mysql]
+pdo_mysql.cache_size = 2000
 
 [MySQL]
 mysql.allow_persistent = On
@@ -209,7 +215,19 @@ soap.wsdl_cache_ttl=86400
 ; A default size of the shared memory segment
 ;sysvshm.init_mem = 10000
 
-
 ; Local Variables:
 ; tab-width: 4
 ; End:
+
+[apc]
+apc.enabled=1
+apc.shm_size=512M
+apc.num_files_hint=10000
+apc.user_entries_hint=10000
+apc.max_file_size=5M
+apc.stat=0
+apc.optimization=0
+apc.shm_segments=1
+apc.enable_cli=1
+apc.cache_by_default=1
+apc.include_once_override=1
