@@ -31,6 +31,7 @@ installed_eggs
 dist
 lib
 local
+etc/redis.conf
 etc/mysql.cnf
 etc/nginx.conf
 etc/php-fpm.conf
