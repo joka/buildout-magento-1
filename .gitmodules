@@ -1,3 +1,6 @@
 [submodule "cfgrepo"]
 	path = cfgrepo
 	url = git@github.com:joka/leocornus.buildout.cfgrepo.git
+[submodule "python/buildout.python"]
+	path = python/buildout.python
+	url = https://github.com/collective/buildout.python.git
