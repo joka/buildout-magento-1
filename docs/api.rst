@@ -1,11 +1,21 @@
-=================
-API Documentation
-=================
+======================
+REST API Documentation
+======================
 
-API URL
+Usage
 ========
 
-development: http://api.develop.sativa.jokasis.de
+* url development: http://api.develop.sativa.jokasis.de
+
+* example usage (with curl wrapper resty https://github.com/micha/resty:
+
+.. code-block:: bash
+
+   <Method> <url>                                <path>    <body> (content-type text/json, utf-8)
+   DELETE   api.profi.develop.sativa.jokasis.de/categories "{}"
+   POST     api.profi.develop.sativa.jokasis.de/categories < categories_post.json
+
+* example json/yaml data is found in: src/organicseeds_webshop_api/organicseeds_webshop_api/tests/testdata/
 
 
 Upload Items and Categories to the Webshop
@@ -272,8 +282,6 @@ ItemUpdate
 
 
 
-
-
 Return codes
 =============
 
@@ -289,6 +297,7 @@ Return codes
   name is the eventual name of the value that caused problems
   description is a description of the problem encountered.
 
-- status code: 500
+- status code: 501
 
-  Internal Error, see log files for details.
+  body: {“status”: “errors”, “errors”: errors } With errors being a JSON dictionary with more information.
+  Read WebhsopAPI or Magento log files for even more details.

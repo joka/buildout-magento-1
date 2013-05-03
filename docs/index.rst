@@ -16,5 +16,6 @@ Contents:
 
    api
    development
+   changes
    modules
 
