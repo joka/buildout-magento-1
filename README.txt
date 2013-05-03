@@ -36,10 +36,10 @@ A.  To checkout the source code / buildout you need a bitbucket.com acckount wit
 
 0.1 Install Dependencies (tested with Debian 6 and Ubuntu 12.10):
 
-    $ sudo apt-get install libpng-dev libjpeg-dev gcc make build-essential bin86 unzip libpcre3-dev zlib1g-dev git libssl-dev libghc6-bzlib-dev
-    $ sudo apt-get install libcurl4-openssl-dev libxml2-dev  libjpeg-dev libpng12-dev  libgd2-xpm-dev libmcrypt-dev libfreetype6-dev gettext libaio-dev 
-    $ sudo apt-get install python python-virtualenv
-    $ sudo apt-get install imagemagick libpcre3-dev autoconf libltdl-dev cmake openssh-client
+    $ sudo apt-get install gcc make build-essential autoconf libltdl-dev cmak ebin86 unzip libpcre3-dev zlib1g-dev libssl-dev libghc6-bzlib-dev
+    $ sudo apt-get install libcurl4-openssl-dev libxml2-dev  libjpeg-dev libpng12-dev libgd2-xpm-dev libmcrypt-dev libfreetype6-dev gettext libaio-dev 
+    $ sudo apt-get install python 
+    $ sudo apt-get install imagemagick  
 
 0.2 Install Dependencies Mac OSX:
 
@@ -53,8 +53,12 @@ A.  To checkout the source code / buildout you need a bitbucket.com acckount wit
     $ git submodule init
     $ git submodule update
 
-2. Create an isolated python environment:
-    $virtualenv .
+2. Compile Python 2.7 
+
+    $ cd python
+    $ python boostrap.py
+    $ bin/buildout
+    $ ../
 
 3. Run buildout to build/configure all server:
  
