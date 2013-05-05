@@ -37,6 +37,7 @@ etc/nginx.conf
 etc/php-fpm.conf
 etc/php.ini
 etc/supervisor.conf
+etc/webshopapi.conf
 docs/Makefile
 docs/doctest/
 docs/doctrees/
