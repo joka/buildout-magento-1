@@ -7,6 +7,8 @@
 Welcome to OrganicSeeds Webshop API's documentation
 =============================================================
 
+Install Magento and the webshop api webservice for Bingenheim/Satvia selecline.
+
 Contents:
 =========
 
@@ -14,7 +16,10 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
+   installation
    api
+   maintenance
+   update_server_config
    development
    changes
    modules

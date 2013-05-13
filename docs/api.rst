@@ -11,9 +11,11 @@ Usage
 
 .. code-block:: bash
 
+   resty  api.develop.sativa.jokasis.de
+
    <Method> <url>                                <path>    <body> (content-type text/json, utf-8)
-   DELETE   api.profi.develop.sativa.jokasis.de/categories "{}"
-   POST     api.profi.develop.sativa.jokasis.de/categories < categories_post.json
+   DELETE   api.develop.sativa.jokasis.de/categories "{}"
+   POST     api.develop.sativa.jokasis.de/categories < categories_post.json
 
 * example json/yaml data is found in: src/organicseeds_webshop_api/organicseeds_webshop_api/tests/testdata/
 
@@ -32,6 +34,7 @@ POST /categories
 **Example json data (yaml):**
 
 .. literalinclude:: categories_post.yaml
+   :language: yaml
 
 
 DELETE /categories
@@ -48,6 +51,7 @@ POST /item_groups
 **Example json data (yaml):**
 
 .. literalinclude:: item_groups_post.yaml
+   :language: yaml
 
 
 DELETE /item_groups
@@ -64,6 +68,7 @@ POST /unit_of_measures
 **Example json data (yaml):**
 
 .. literalinclude:: unit_of_measures_post.yaml
+   :language: yaml
 
 
 DELETE /unit_of_measures
@@ -75,7 +80,7 @@ DELETE /unit_of_measures
 PUT /unit_of_measures
 ------------------------
 
-TODO
+.. autofunction:: organicseeds_webshop_api.services.unit_of_measures_put
 
 
 POST /vpe_types
@@ -86,6 +91,7 @@ POST /vpe_types
 **Example json data (yaml):**
 
 .. literalinclude:: vpe_types_post.yaml
+   :language: yaml
 
 
 DELETE /vpe_types
@@ -97,7 +103,7 @@ DELETE /vpe_types
 PUT /vpe_types
 ---------------
 
-TODO
+.. autofunction:: organicseeds_webshop_api.services.vpe_types_put
 
 
 POST /items
@@ -108,6 +114,7 @@ POST /items
 **Example json data (yaml):**
 
 .. literalinclude:: items_post.yaml
+   :language: yaml
 
 
 DELETE /items
@@ -248,6 +255,10 @@ TaxClass
 ----------------
 .. autoclass:: organicseeds_webshop_api.schemata.TaxClass
 
+KW (calendar week)
+-------------------
+.. autoclass:: organicseeds_webshop_api.schemata.KW
+
 
 Schema enties
 ================
@@ -301,3 +312,32 @@ Return codes
 
   body: {“status”: “errors”, “errors”: errors } With errors being a JSON dictionary with more information.
   Read WebhsopAPI or Magento log files for even more details.
+
+Use Cases
+==========
+
+
+Create Items/Groups/Categories
+-------------------------------
+
+.. literalinclude:: test_functional_create_items_item_groups_and_categories.rst
+   :language: rst
+
+Update Groups/Categories
+-------------------------------
+
+.. literalinclude:: test_functional_update_item_groups_and_categories.rst
+   :language: rst
+
+Update Items
+------------
+
+.. literalinclude:: test_functional_update_items.rst
+   :language: rst
+
+
+GET Items/Groups/Categories
+---------------------------
+
+.. literalinclude:: test_functional_get_items_item_groups_and_categories.rst
+   :language: rst
