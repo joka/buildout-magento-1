@@ -68,6 +68,7 @@ default_socket_timeout = 60
 ;;;;;;;;;;;;;;;;
 ; extensions
 
+extension=redis.so
 
 [Date]
 ; none for now
