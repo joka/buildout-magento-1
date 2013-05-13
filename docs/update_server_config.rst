@@ -14,6 +14,10 @@ Rerun buildout::
 
     $ bin/buildout -o
 
+Restart php::
+
+    $ bin/supervisorctl restart php-fpm
+
 nginx configuration
 -----------------------------
 
@@ -29,6 +33,10 @@ Rerun buildout::
 
     $ bin/buildout -o
 
+Restart nginx::
+
+    $ bin/supervisorctl restart nginx
+
 webshop_api configuration
 ---------------------------------
 
@@ -39,6 +47,10 @@ Edit the webshopapix parts in configuration.cfg::
 Rerun buildout::
 
     $ bin/buildout -o
+
+Restart webshop_api::
+
+    $ bin/supervisorctl restart webshop_api
 
 
 documentation
