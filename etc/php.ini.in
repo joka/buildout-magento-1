@@ -68,7 +68,6 @@ default_socket_timeout = 60
 ;;;;;;;;;;;;;;;;
 ; extensions
 
-extension=apc.so
 
 [Date]
 ; none for now
