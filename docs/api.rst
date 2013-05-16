@@ -192,6 +192,14 @@ TaxClass
 ---------------------
 .. autoclass:: organicseeds_webshop_api.schemata.TaxClass
 
+Address
+---------------------
+.. autoclass:: organicseeds_webshop_api.schemata.Address
+
+OrderItem
+---------------------
+.. autoclass:: organicseeds_webshop_api.schemata.OrderItem
+
 
 Complex fields with inheritance
 =====================================
@@ -291,6 +299,13 @@ ItemUpdate
 -------------
 .. autoclass:: organicseeds_webshop_api.schemata.ItemUpdate
 
+Order
+-------------
+.. autoclass:: organicseeds_webshop_api.schemata.Order
+
+OrderUpdate
+-------------
+.. autoclass:: organicseeds_webshop_api.schemata.OrderUpdate
 
 
 Return codes

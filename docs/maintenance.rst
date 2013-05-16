@@ -27,7 +27,13 @@ Magento-database reset
 
     $ bin/mysql -D magento < etc/magento_database_basic_views_26_04_2013.sql
 
-upload categories/items
+
+Magento-database create backup
+------------------------------
+
+manual complete database backup::
+
+    $ bin/mysqldump -A --add-drop-database  --single-transaction > backupfile.sql
 
 
 Magento-cache reset
