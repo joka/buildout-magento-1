@@ -65,7 +65,7 @@ Webshop-API databse reset
     $ bin/supervisorctl start  webshopapi
 
 
-Reinstall/Update Magento
+Update Magento
 ------------------------
 
 * update magento version in configuration.cfg
@@ -75,5 +75,30 @@ Reinstall/Update Magento
 remove all magento files::
     $ rm -rf /var/www/*
 
-reinstall::
+rerun buildout::
     $ bin/buildout -o
+
+Reinstall Magento
+------------------------
+
+stop supervisor::
+
+    $ bin/supervisorctl shutdown
+
+remove all magento and database files::
+
+    $ rm -rf /var/www/*
+    $ rm -rf /var/mysql/data
+
+setup mysqlo::
+
+    $ bin/buildout install init-mysql-db
+    $ bin/supervisorctl shutdown
+    $ bin/buildout install init-mysql-db
+
+setup magento::
+
+    $ bin/buildout install magento-build
+    $ bin/buildout install magento-install
+    $ bin/magento-update-conf
+
