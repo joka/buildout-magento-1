@@ -80,27 +80,12 @@ Add your domain (magento base url) to /etc/hosts::
 
 Proxy develop.sativa.jokasis.de to develop.sativa.jokasis.de:9010, magento needs to run without port numbers.
 
-Create initial data structure:
+Setup magento::
 
-Import database with categories, websites, stores and views !overrides database::
+    $ bin/buildout install magento-install
+    $ bin/bin/magento-update-conf
 
-    $ bin/mysql -D magento < etc/magento_database_basic_views_26_04_2013.sql
-
-Or manually setup the initial data:
-
-   Log into the mangento admin panel:
-
-    http://develop.sativa.jokasis.de/admin
-
-   Add websites, stores, views manually:
-
-   * got to system-> manage stores
-
-   * add websites chwebsite, frwebsite, dewebsite
-
-   * add stores and select the right website / root category:  ch_hobby, ch_profi, fr_hobby, fr_resell, fr_profi, de_hobby, de_resell
-
-   * add storeviews for every language: de_ch_hobby, fr_ch_hobby..  fr_fr_hobby, ...
+Log into the mangento admin panel http://develop.sativa.jokasis.de/admin:
 
    * create initial pages/blocks: system -> GermanSetup -> DISABLE Steuer-Einstellungen, Konfigurations-Einstellungen, -> GermanSetupAusführen
 

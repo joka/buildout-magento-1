@@ -90,7 +90,7 @@ remove all magento and database files::
     $ rm -rf /var/www/*
     $ rm -rf /var/mysql/data
 
-setup mysqlo::
+setup mysql::
 
     $ bin/buildout install init-mysql-db
     $ bin/supervisorctl shutdown
