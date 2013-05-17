@@ -102,6 +102,8 @@ Or manually setup the initial data:
 
    * add storeviews for every language: de_ch_hobby, fr_ch_hobby..  fr_fr_hobby, ...
 
+   * create initial pages/blocks: system -> GermanSetup -> DISABLE Steuer-Einstellungen, Konfigurations-Einstellungen, -> GermanSetupAusführen
+
 
 
 
