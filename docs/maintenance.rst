@@ -58,11 +58,11 @@ Webshop-API databse reset
 
 .. code-block:: bash
 
-    $ bin/supervisorctl stop webshopapi
+    $ bin/supervisorctl stop webshop_api
 
     $ rm -rf var/webshopapi_database/Data.fs*
 
-    $ bin/supervisorctl start  webshopapi
+    $ bin/supervisorctl start webshop_api
 
 
 Update Magento
@@ -76,7 +76,13 @@ remove all magento files::
     $ rm -rf /var/www/*
 
 rerun buildout::
+
     $ bin/buildout -o
+
+clear magento cache::
+
+    $ bin/whiz cache-clear
+
 
 Reinstall Magento
 ------------------------
@@ -89,16 +95,16 @@ remove all magento and database files::
 
     $ rm -rf /var/www/*
     $ rm -rf /var/mysql/data
+    $ rm -rf var/webshopapi_database/Data.fs*
 
 setup mysql::
 
-    $ bin/buildout install init-mysql-db
-    $ bin/supervisorctl shutdown
-    $ bin/buildout install init-mysql-db
+    $ bin/buildout install init-mysql-db && bin/supervisorctl shutdown && bin/buildout install init-mysql-db
 
-setup magento::
+check that the mysql admin password is set correctly::
 
-    $ bin/buildout install magento-build
-    $ bin/buildout install magento-install
-    $ bin/magento-update-conf
+    $ bin/mysql
 
+rerun buildout::
+
+    $ bin/buildout -o
