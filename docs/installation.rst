@@ -66,24 +66,16 @@ Run buildout to build/configure all server::
     $ bin/python bootstrap.py
     $ bin/buildout
 
-Setup MariaDB and start supervisor (server to control process states)::
-
-    $ bin/buildout install init-mysql-db
-
 Check that every server runs fine::
 
     $ bin/supervisorctl status
+    $ bin/mysql
 
 Add your domain (magento base url) to /etc/hosts::
 
     $ echo "127.0.0.1 develop.sativa.jokasis.de hobby.develop.sativa.jokasis.de resell.develop.sativa.jokasis.de profi.develop.sativa.jokasis" | sudo tee -a  /etc/hosts"
 
 Proxy develop.sativa.jokasis.de to develop.sativa.jokasis.de:9010, magento needs to run without port numbers.
-
-Setup magento::
-
-    $ bin/buildout install magento-install
-    $ bin/bin/magento-update-conf
 
 Log into the mangento admin panel http://develop.sativa.jokasis.de/admin:
 

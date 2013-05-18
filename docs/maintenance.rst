@@ -97,14 +97,6 @@ remove all magento and database files::
     $ rm -rf /var/mysql/data
     $ rm -rf var/webshopapi_database/Data.fs*
 
-setup mysql::
-
-    $ bin/buildout install init-mysql-db && bin/supervisorctl shutdown && bin/buildout install init-mysql-db
-
-check that the mysql admin password is set correctly::
-
-    $ bin/mysql
-
 rerun buildout::
 
     $ bin/buildout -o
