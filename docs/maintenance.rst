@@ -83,6 +83,10 @@ clear magento cache::
 
     $ bin/whiz cache-clear
 
+run all tests::
+
+    $ bin/pytest -m"not loadtest"
+
 
 Reinstall Magento
 ------------------------
