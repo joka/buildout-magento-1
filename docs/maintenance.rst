@@ -36,6 +36,14 @@ manual complete database backup::
     $ bin/mysqldump -A --add-drop-database  --single-transaction > backupfile.sql
 
 
+Magento-database export pages/blocks (cms)
+------------------------------------------
+
+manual complete database backup::
+
+    $ bin/magento-export-cms
+
+
 Magento-cache reset
 ---------------------
 
