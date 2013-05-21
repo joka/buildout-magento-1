@@ -1,1 +1,0 @@
-../src/organicseeds_webshop_api/organicseeds_webshop_api/tests/test_functional_create_items_item_groups_and_categories.rst

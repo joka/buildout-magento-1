@@ -335,24 +335,24 @@ Use Cases
 Create Items/Groups/Categories
 -------------------------------
 
-.. literalinclude:: test_functional_create_items_item_groups_and_categories.rst
+.. literalinclude:: use_cases/create_items_item_groups_and_categories.rst
    :language: rst
 
 Update Groups/Categories
 -------------------------------
 
-.. literalinclude:: test_functional_update_item_groups_and_categories.rst
+.. literalinclude:: use_cases/update_item_groups_and_categories.rst
    :language: rst
 
 Update Items
 ------------
 
-.. literalinclude:: test_functional_update_items.rst
+.. literalinclude:: use_cases/update_items.rst
    :language: rst
 
 
 GET Items/Groups/Categories
 ---------------------------
 
-.. literalinclude:: test_functional_get_items_item_groups_and_categories.rst
+.. literalinclude:: use_cases/get_items_item_groups_and_categories_data.rst
    :language: rst
