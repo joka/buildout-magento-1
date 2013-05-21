@@ -33,7 +33,7 @@ POST /categories
 
 **Example json data (yaml):**
 
-.. literalinclude:: categories_post.yaml
+.. literalinclude:: testdata/categories_post.yaml
    :language: yaml
 
 
@@ -50,7 +50,7 @@ POST /item_groups
 
 **Example json data (yaml):**
 
-.. literalinclude:: item_groups_post.yaml
+.. literalinclude:: testdata/item_groups_post.yaml
    :language: yaml
 
 
@@ -67,7 +67,7 @@ POST /unit_of_measures
 
 **Example json data (yaml):**
 
-.. literalinclude:: unit_of_measures_post.yaml
+.. literalinclude:: testdata/unit_of_measures_post.yaml
    :language: yaml
 
 
@@ -90,7 +90,7 @@ POST /vpe_types
 
 **Example json data (yaml):**
 
-.. literalinclude:: vpe_types_post.yaml
+.. literalinclude:: testdata/vpe_types_post.yaml
    :language: yaml
 
 
@@ -113,7 +113,7 @@ POST /items
 
 **Example json data (yaml):**
 
-.. literalinclude:: items_post.yaml
+.. literalinclude:: testdata/items_post.yaml
    :language: yaml
 
 
