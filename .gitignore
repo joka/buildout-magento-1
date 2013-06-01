@@ -14,7 +14,12 @@
 *~
 .*~
 .#*
-var
+var/log  
+var/mysql  
+var/redis  
+var/run  
+var/ebshopapi_database  
+var/www
 parts
 bin
 /src/*
