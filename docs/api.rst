@@ -315,7 +315,9 @@ Return codes
 
   body: {"status": "succeeded"}
 
-- status code: 400
+- status code: 400 - Bad request
+
+  The request data is not valid.
 
   body: {"status": "errors", "errors": errors }
   With errors being a JSON dictionary with the keys “location”, “name” and “description”.
@@ -323,10 +325,19 @@ Return codes
   name is the eventual name of the value that caused problems
   description is a description of the problem encountered.
 
-- status code: 501
+- status code: 500 - Internal Server error
 
-  body: {“status”: “errors”, “errors”: errors } With errors being a JSON dictionary with more information.
-  Read WebhsopAPI or Magento log files for even more details.
+  Something totally unexpected happend.
+
+  Read WebhsopAPI log files for details.
+
+- status code: 502  - Bad Gateway
+
+  There are errors communication with the webshop (magento).
+
+  body: {“status”: “errors”, “errors”: errors } .
+  With errors being a JSON dictionary with the keys “location”, “name” and “description”.
+  Read Magento log files for more details.
 
 Use Cases
 ==========
