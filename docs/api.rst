@@ -1,6 +1,9 @@
-======================
-REST API Documentation
-======================
+===============================
+REST Webshop API Documentation
+===============================
+
+Webservice to mange the webshop (magento) data.
+
 
 Usage
 ========
@@ -20,8 +23,8 @@ Usage
 * example json/yaml data is found in: src/organicseeds_webshop_api/organicseeds_webshop_api/tests/testdata/
 
 
-Upload Items and Categories to the Webshop
-==========================================
+Create Items, ItemGroups and Categories
+=======================================
 
 .. automodule:: organicseeds_webshop_api.services
 
@@ -129,6 +132,133 @@ PUT /items
 .. autofunction:: organicseeds_webshop_api.services.items_put
 
 
+Create and update Customers
+============================
+
+
+Get and Update Orders (and Invoices)
+====================================
+
+GET /orders
+-----------
+.. autofunction:: organicseeds_webshop_api.services.orders_get
+
+
+PUT /orders
+-----------
+.. autofunction:: organicseeds_webshop_api.services.orders_put
+
+
+PUT /invoices
+-------------
+.. autofunction:: organicseeds_webshop_api.services.invoices_put
+
+
+Get Items, ItemGroups, Categories
+========================================
+
+
+GET /items/<id>
+----------------
+.. autofunction:: organicseeds_webshop_api.services.item_get
+
+
+GET /item_groups/<id>
+---------------------
+.. autofunction:: organicseeds_webshop_api.services.item_group_get
+
+
+GET /categories/<id>
+---------------------
+
+
+Search Items, ItemGroups, Categories
+=====================================
+
+
+GET /search
+-----------
+.. autofunction:: organicseeds_webshop_api.services.search_get
+
+
+Return codes
+=============
+
+- status code: 200
+
+  body: {"status": "succeeded"}
+
+- status code: 400 - Bad request
+
+  The request data is not valid.
+
+  body: {"status": "errors", "errors": errors }
+  With errors being a JSON dictionary with the keys “location”, “name” and “description”.
+  location is the location of the error. It can be “querystring”, “header” or “body”
+  name is the eventual name of the value that caused problems
+  description is a description of the problem encountered.
+
+- status code: 500 - Internal Server error
+
+  Something totally unexpected happend.
+
+  Read WebhsopAPI log files for details.
+
+- status code: 502  - Bad Gateway
+
+  There are errors communication with the webshop (magento).
+
+  body: {“status”: “errors”, “errors”: errors } .
+  With errors being a JSON dictionary with the keys “location”, “name” and “description”.
+  Read Magento log files for more details.
+
+
+Use Cases
+==========
+
+
+Create Items, ItemGroups and Categories
+---------------------------------------
+
+.. literalinclude:: use_cases/create_items_item_groups_and_categories.rst
+   :language: rst
+
+
+Update Groups and Categories
+-------------------------------
+
+.. literalinclude:: use_cases/update_item_groups_and_categories.rst
+   :language: rst
+
+
+Update Items
+------------
+
+.. literalinclude:: use_cases/update_items.rst
+   :language: rst
+
+
+Get and Update Orders
+----------------------
+
+.. literalinclude:: use_cases/get_and_update_orders.rst
+   :language: rst
+
+
+Get Items, ItemGroups and Categories
+------------------------------------
+
+.. literalinclude:: use_cases/get_items_item_groups_and_categories_data.rst
+   :language: rst
+
+
+Search Items, ItemGroups and Categories
+-----------------------------------------
+
+.. literalinclude:: use_cases/search_items_item_groups_and_categories.rst
+   :language: rst
+
+
 Basic fields
 ==================
 
@@ -151,6 +281,14 @@ Decimal
 Float
 ----------------
 .. autoclass:: organicseeds_webshop_api.schemata.Float
+
+Float2DecPoints
+----------------
+.. autoclass:: organicseeds_webshop_api.schemata.Float2DecPoints
+
+Float4DecPoints
+----------------
+.. autoclass:: organicseeds_webshop_api.schemata.Float4DecPoints
 
 URL
 ----------------
@@ -283,6 +421,10 @@ ItemGroup
 ------------
 .. autoclass:: organicseeds_webshop_api.schemata.ItemGroup
 
+ItemGroupGet
+------------
+.. autoclass:: organicseeds_webshop_api.schemata.ItemGroupGet
+
 (VPEType)
 ---------------
 .. autoclass:: organicseeds_webshop_api.schemata.VPEType
@@ -299,6 +441,10 @@ ItemUpdate
 -------------
 .. autoclass:: organicseeds_webshop_api.schemata.ItemUpdate
 
+ItemGet
+-------------
+.. autoclass:: organicseeds_webshop_api.schemata.ItemGet
+
 Order
 -------------
 .. autoclass:: organicseeds_webshop_api.schemata.Order
@@ -307,63 +453,14 @@ OrderUpdate
 -------------
 .. autoclass:: organicseeds_webshop_api.schemata.OrderUpdate
 
+OrderItem
+-------------
+.. autoclass:: organicseeds_webshop_api.schemata.OrderItem
 
-Return codes
-=============
+Invoice
+-------
+.. autoclass:: organicseeds_webshop_api.schemata.Invoice
 
-- status code: 200
-
-  body: {"status": "succeeded"}
-
-- status code: 400 - Bad request
-
-  The request data is not valid.
-
-  body: {"status": "errors", "errors": errors }
-  With errors being a JSON dictionary with the keys “location”, “name” and “description”.
-  location is the location of the error. It can be “querystring”, “header” or “body”
-  name is the eventual name of the value that caused problems
-  description is a description of the problem encountered.
-
-- status code: 500 - Internal Server error
-
-  Something totally unexpected happend.
-
-  Read WebhsopAPI log files for details.
-
-- status code: 502  - Bad Gateway
-
-  There are errors communication with the webshop (magento).
-
-  body: {“status”: “errors”, “errors”: errors } .
-  With errors being a JSON dictionary with the keys “location”, “name” and “description”.
-  Read Magento log files for more details.
-
-Use Cases
-==========
-
-
-Create Items/Groups/Categories
--------------------------------
-
-.. literalinclude:: use_cases/create_items_item_groups_and_categories.rst
-   :language: rst
-
-Update Groups/Categories
--------------------------------
-
-.. literalinclude:: use_cases/update_item_groups_and_categories.rst
-   :language: rst
-
-Update Items
-------------
-
-.. literalinclude:: use_cases/update_items.rst
-   :language: rst
-
-
-GET Items/Groups/Categories
----------------------------
-
-.. literalinclude:: use_cases/get_items_item_groups_and_categories_data.rst
-   :language: rst
+InvoiceResult
+-------------
+.. autoclass:: organicseeds_webshop_api.schemata.InvoiceResult
