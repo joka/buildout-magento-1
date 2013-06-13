@@ -25,7 +25,7 @@ Magento-database reset
 
     $ bin/buildout install init-mysql-db
 
-    $ bin/mysql -D magento < etc/magento_database_basic_views_26_04_2013.sql
+    $ bin/mysql -D magento < etc/magento_database_backup.sql
 
 
 Magento-database create backup
@@ -33,15 +33,23 @@ Magento-database create backup
 
 manual complete database backup::
 
-    $ bin/mysqldump -A --add-drop-database  --single-transaction > backupfile.sql
+    $ bin/mysqldump -A --single-transaction > backupfile.sql
 
 
 Magento-database export pages/blocks (cms)
 ------------------------------------------
 
-manual complete database backup::
+run::
 
     $ bin/magento-export-cms
+
+
+Magento-database payone payment tables
+--------------------------------------
+
+run::
+
+    $ bin/magento-export-payone
 
 
 Magento-cache reset
