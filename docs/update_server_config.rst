@@ -53,7 +53,7 @@ Restart webshop_api::
     $ bin/supervisorctl restart webshop_api
 
 
-documentation
+Documentation
 ---------------
 
 
@@ -66,7 +66,7 @@ run python sphinx compiler::
 read docs/html or docs/latex/OrganicSeedsWebshopSchnittstelle.pdf
 
 
- Magento configuration
+Magento configuration
 ----------------------------
 
 Don't use the admin panel to configure magento or change files in var/www.
@@ -79,21 +79,26 @@ and rergenerate locale.xml::
     $ bin/magento-update-conf
 
 To change global configuration or to add default data with SQL add an
-extensions upgrade profile.
+extensions upgrade profile:
 
-
+* go to the profile package::
 
     $ cd src/organicseeds_profile
 
-    get the current version number
+* get the current version number::
+
     $ cat app/code/local/Organicseeds/Profile/etc/config.xml
-    generate upgrade profile to new version
+
+* generate upgrade profile to new version::
+
     $ zf upgrade mage-module organicseeds/profile to  0.0.2
-    add upgrade code
+
+* add upgrade code::
+
     $ vim app/code/local/Organicseeds/Profile/sql/organicseeds_profile_setup/mysql4-upgrade-0.0.1-0.0.2.php
 
 You can use wiz to list available config options
-(https://github.com/classyllama/Wiz):
+(https://github.com/classyllama/Wiz)::
 
     $ bin/whiz config-get global/pdf
 
@@ -102,6 +107,7 @@ Add an extension module to magento
 
 For common extensions edit the modman part in configuration.cfg
 (https://github.com/colinmollenhour/modman/wiki/Tutorial).
-Rerun buildout:
+
+Rerun buildout::
 
     $ bin/buildout
