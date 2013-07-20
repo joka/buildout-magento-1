@@ -1,6 +1,6 @@
-===============================
-REST Webshop API Documentation
-===============================
+================================
+REST Webshop API - Documentation
+================================
 
 Webservice to mange the webshop (magento) data.
 
@@ -216,48 +216,7 @@ Return codes
 Use Cases
 ==========
 
-
-Create Items, ItemGroups and Categories
----------------------------------------
-
-.. literalinclude:: use_cases/create_items_item_groups_and_categories.rst
-   :language: rst
-
-
-Update Groups and Categories
--------------------------------
-
-.. literalinclude:: use_cases/update_item_groups_and_categories.rst
-   :language: rst
-
-
-Update Items
-------------
-
-.. literalinclude:: use_cases/update_items.rst
-   :language: rst
-
-
-Get and Update Orders
-----------------------
-
-.. literalinclude:: use_cases/get_and_update_orders.rst
-   :language: rst
-
-
-Get Items, ItemGroups and Categories
-------------------------------------
-
-.. literalinclude:: use_cases/get_items_item_groups_and_categories_data.rst
-   :language: rst
-
-
-Search Items, ItemGroups and Categories
------------------------------------------
-
-.. literalinclude:: use_cases/search_items_item_groups_and_categories.rst
-   :language: rst
-
+see :doc:`use_cases`
 
 Basic fields
 ==================

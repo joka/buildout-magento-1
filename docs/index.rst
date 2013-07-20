@@ -14,10 +14,11 @@ Contents:
 
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 2
 
    installation
    api
+   use_cases
    maintenance
    update_server_config
    development
